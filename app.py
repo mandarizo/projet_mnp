@@ -22,3 +22,8 @@ def get_projets():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Utilise le port défini par Render
     app.run(host='0.0.0.0', port=port, debug=True)
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Bienvenue sur l'API Projet MNP"}), 200
+
